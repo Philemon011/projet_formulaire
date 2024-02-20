@@ -9,13 +9,22 @@
     $password=$_POST['password'];
     
     $select=mysqli_query($con,"SELECT * FROM utilisateurs WHERE email='$email' AND mdp='$password'");
-    $row=mysqli_fetch_assoc($select);
 
-    if (is_array($row)) {
-      $_SESSION["Email"]=$row['email'];
-      header("Location:acceuil.php");
-    }else {
-        header("Location:login.php");
+    if (mysqli_num_rows($select) == 1) {
+        // Récupérer la ligne de résultat
+        $row = mysqli_fetch_assoc($select);
+    
+        // Assigner les données à des variables de session individuelles
+        $_SESSION['Nom'] = $row['nom'];
+        $_SESSION['Prenom'] = $row['prenom'];
+        $_SESSION['Id'] = $row['id'];
+        $_SESSION['Fonction'] = $row['fonction'];
+    
+        // Rediriger vers la page d'accueil pour saluer et afficher les informations
+        header("Location: accueil.php");
+    } else {
+        // Gérer le cas où l'utilisateur n'est pas trouvé ou les informations d'identification sont incorrectes
+        header("Location: login.php");
     }
 }
 ?>
