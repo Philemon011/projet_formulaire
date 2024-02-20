@@ -18,10 +18,10 @@
 <div class="container">
   <div class="jumbotron mt-5">
     <h1 class="display-4">Bonjour <?php echo $_SESSION['Nom'] ." ".$_SESSION['Prenom'] ; ?></h1>
-    <p class="lead">Votre numéro est <strong><?php echo $_SESSION['Id'];?></strong> et vous êtes dans le département de <strong><?php echo $_SESSION['Fonction'];?></strong></p>
+    <p class="lead">Votre numéro est le <strong><?php echo $_SESSION['Id'];?></strong> et vous êtes dans le département de <strong><?php echo $_SESSION['Fonction'];?></strong></p>
     <br>
     <br>
-    <button type="submit" class="btn btn-primary" name="login">Déconnexion</button>
+    <a href="deconnexion.php"><button class="btn btn-primary" name="login">Déconnexion</button></a>
   </div>
 </div>
 

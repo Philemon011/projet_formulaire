@@ -59,11 +59,10 @@
           <select name="fonction" class="form-control" id="fonction" required>
             <option value="">Sélectionnez une fonction</option>
             <option value="finance">Finance</option>
-            <option value="management">Management</option>
-            <option value="management">Comptabilité</option>
-            <option value="management">Système Informatique</option>
-            <option value="management">Management</option>
-            <option value="management">Commercial</option>
+            <option value="Management">Management</option>
+            <option value="Comptabilité">Comptabilité</option>
+            <option value="Système Informatique">Système Informatique</option>
+            <option value="Commercial">Commercial</option>
           </select>
           <small id="fonctionError" class="text-danger"></small>
         </div>

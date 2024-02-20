@@ -18,10 +18,10 @@ if (isset($_POST['envoyer'])) {
     $query="INSERT INTO utilisateurs (nom,prenom,date,email,numero,adresse,fonction,mdp) VALUES ('$nom','$prenom','$date','$email','$numero','$adresse','$fonction','$password')";
     $query_run=mysqli_query($con,$query);
         if ($query_run) {
-            echo 'Succès';
+            header("Location: login.php");
         }
         else {
-            echo 'Erreur';
+            echo 'Erreur : Utiisateur non enrédistré';
         }
     
     
