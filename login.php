@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,25 +14,27 @@
 <div class="container">
   <div class="col-md-6">
     <h2 class="mb-4">Connexion</h2>
-    <form id="loginForm" onsubmit="return validateForm()">
+    <form id="loginForm" onsubmit="return validateForm()" method="post" action="connexion.php">
       <div class="form-group">
         <label for="email">Email :</label>
-        <input type="email" class="form-control" id="email" placeholder="Entrez votre email" required>
+        <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
         <small id="emailError" class="text-danger"></small> <!-- Message d'erreur -->
       </div>
       <div class="form-group">
         <label for="password">Mot de passe :</label>
-        <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" required>
+        <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" name="password" required>
         <small id="passwordError" class="text-danger"></small> <!-- Message d'erreur -->
       </div>
       <div>
         <a href="inscription.php">Vous n'avez pas un compte, créez en un ici</a>
       </div>
       <br>
-      <button type="submit" class="btn btn-primary">Se connecter</button>
+      <button type="submit" class="btn btn-primary" name="login">Se connecter</button>
     </form>
   </div>
 </div>
+
+
 
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

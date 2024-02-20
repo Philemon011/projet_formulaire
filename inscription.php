@@ -26,7 +26,7 @@
       <form method="POST" id="signupForm" onsubmit="return validateForm()" action="enregister.php">
         <div class="form-group">
           <label for="nom">Nom :</label>
-          <input type="text"  class="form-control" id="nom" placeholder="Entrez votre nom" name="nom" required>
+          <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom" name="nom" required>
           <small id="nomError" class="text-danger"></small>
         </div>
         <div class="form-group">
@@ -36,12 +36,12 @@
         </div>
         <div class="form-group">
           <label for="date">Date de naissance :</label>
-          <input type="date"  class="form-control" id="date" name="date" required>
+          <input type="date" class="form-control" id="date" name="date" required>
           <small id="dateError" class="text-danger"></small>
         </div>
         <div class="form-group">
           <label for="email">Email :</label>
-          <input type="email"  class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
+          <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
           <small id="emailError" class="text-danger"></small>
         </div>
         <div class="form-group">
@@ -76,6 +76,9 @@
           <label for="confirmPassword">Confirmez le Mot de passe :</label>
           <input type="password" class="form-control" id="confirmPassword" placeholder="Entrez le mot de passe" required>
           <small id="confirmPasswordError" class="text-danger"></small>
+        </div>
+        <div>
+          <a href="login.php">Avez-vous un compte, connectez-vous ici</a>
         </div>
         <br>
         <button type="submit" class="btn btn-primary" name="envoyer">Créer un compte</button>
@@ -199,37 +202,37 @@
       // vérifier le champ mot de passe
       // Vérifier la longueur minimale
       if (password.length < 8) {
-        passwordError.innerText="Le mot de passe doit contenir au moins 8 caractères.";
+        passwordError.innerText = "Le mot de passe doit contenir au moins 8 caractères.";
         return false;
       }
       // Vérifier la présence de caractères spéciaux
       var specialCharacters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
       if (!specialCharacters.test(password)) {
-        passwordError.innerText="Le mot de passe doit contenir au moins un caractère spécial.";
+        passwordError.innerText = "Le mot de passe doit contenir au moins un caractère spécial.";
         return false;
       }
       // Vérifier la présence de lettres majuscules
       var uppercaseLetters = /[A-Z]/;
       if (!uppercaseLetters.test(password)) {
-        passwordError.innerText="Le mot de passe doit contenir au moins une lettre majuscule.";
+        passwordError.innerText = "Le mot de passe doit contenir au moins une lettre majuscule.";
         return false;
       }
       // Vérifier la présence de lettres minuscules
       var lowercaseLetters = /[a-z]/;
       if (!lowercaseLetters.test(password)) {
-        passwordError.innerText="Le mot de passe doit contenir au moins une lettre minuscule.";
+        passwordError.innerText = "Le mot de passe doit contenir au moins une lettre minuscule.";
         return false;
       }
       // Vérifier la présence de chiffres
       var numbers = /[0-9]/;
       if (!numbers.test(password)) {
-        passwordError.innerText="Le mot de passe doit contenir au moins un chiffre.";
+        passwordError.innerText = "Le mot de passe doit contenir au moins un chiffre.";
         return false;
       }
 
       // vérification de la conformité entre les 2 champs, mot de passe et confirmer le mot de pass
       if (document.getElementById('password').value != document.getElementById('confirmPassword').value) {
-        confirmPasswordError.innerText="Les mots de passes ne sont pas identiques";
+        confirmPasswordError.innerText = "Les mots de passes ne sont pas identiques";
         return false;
       }
 
